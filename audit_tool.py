@@ -69,7 +69,7 @@ class Duplicate(object):
             parameterType = 'Required',
             direction = 'Input')
         
-        params = [param0, param1, param2, param3]        
+        params = [param0, param1, param2, param3, param4]        
         return params
 
     def isLicensed(self):
@@ -97,19 +97,22 @@ class Duplicate(object):
         output_file = parameters[2].valueAsText
         field = parameters[3].valueAsText
         
+        
         #this reads the csv as a dataframe
-        old_df = pd.read_csv(f'{input_file}')
-
-        #this finds all the duplicates based on the field of interest, the default is keeping the first
-        dups = old_df[old_df.duplicated([f'{field}'])]
+        old_df = pd.read_csv(input_file)
+        
+        dup_idx = old_df.duplicated(field)
+        
+        dups = old_df[dup_idx]
 
         #this writes those duplicates to a csv file determined above
-        dups.to_csv(f'{duplicate_file}')
+        dups.to_csv(duplicate_file)
 
         #this creates the new file while dropping every duplicate except for the first time that
         #the duplicate occurs
-        newdf = pd.read_csv(f'{input_file}').drop_duplicates(subset = [f'{field}'],
-                                               keep='first')
+        
+        newdf = old_df[~dup_idx]
+        
         #this writes the new dif to a csv with no duplicates
         no_dup = newdf.to_csv(output_file, index=False) 
         
