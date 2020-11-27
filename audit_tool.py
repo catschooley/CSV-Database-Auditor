@@ -69,7 +69,11 @@ class Duplicate(object):
             parameterType = 'Required',
             direction = 'Input')
         
-        params = [param0, param1, param2, param3, param4]        
+        #filters the field name option by field names in the file
+        param3.filter.list = ['*']
+        param3.parameterDependencies = [param0.name]
+        
+        params = [param0, param1, param2, param3]        
         return params
 
     def isLicensed(self):
@@ -108,13 +112,12 @@ class Duplicate(object):
         #this writes those duplicates to a csv file determined above
         dups.to_csv(duplicate_file)
 
-        #this creates the new file while dropping every duplicate except for the first time that
-        #the duplicate occurs
+        #creates the new file with whatever isn't a duplicate
         
         newdf = old_df[~dup_idx]
         
         #this writes the new dif to a csv with no duplicates
-        no_dup = newdf.to_csv(output_file, index=False) 
+        no_dup = newdf.to_csv(output_file, index=False)
         
         messages.addMessage('Audit Complete')
         
