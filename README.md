@@ -16,3 +16,9 @@ Double-click the tool script 'Duplicate Removal' or right-click and choose 'open
 
 The tool will only except csv files, most excel files can be easily converted to or saved as a csv file. For the input choose an existing csv file that you want to remove duplicates from, then create two new csv filenames with folder paths. For the field name choose a single field name from the original csv file. Make sure to type it matching spelling and capitilization. 
 
+### Room for Improvement
+* Expand beyond csv files
+* Allow for multiple fields of interest
+* Create dropdown selection for field(s) of interest
+
+
