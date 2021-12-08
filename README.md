@@ -8,11 +8,11 @@ You can pull the repository and run the CSV Auditor Toolbox in ArcGIS Pro 10.1 `
 ## Usage
 The CSV Auditor can be opened by creating a folder connection to the pulled repository on your personal computer.
 
-[Creating a Folder connection and viewing Dupliate Removal Tool](https://gitlab.com/catherine.schooley/csv-database-auditor/-/blob/master/Pictures_1.png)
+[Creating a Folder connection and viewing Dupliate Removal Tool](https://github.com/catschooley/CSV-Database-Auditor/blob/master/Screenshots/Pictures_2.png)
 
 Double-click the tool script 'Duplicate Removal' or right-click and choose 'open' to use the tool. 
 
-[Tool Interface](https://gitlab.com/catherine.schooley/csv-database-auditor/-/blob/master/Pictures_2.png)
+[Tool Interface](https://github.com/catschooley/CSV-Database-Auditor/blob/master/Screenshots/Pictures_1.png)
 
 The tool will only except csv files, most excel files can be easily converted to or saved as a csv file. For the input choose an existing csv file that you want to remove duplicates from, then create two new csv filenames with folder paths. For the field name choose a single field name from the original csv file. Make sure to type it matching spelling and capitilization. 
 
